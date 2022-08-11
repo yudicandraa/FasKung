@@ -19,7 +19,7 @@
     <ul class="nav-list">
       <li>
           <i class='bx bx-search' ></i>
-         <input type="text" placeholder="Search...">
+         <input type="text" placeholder="Cari">
          <span class="tooltip">Search</span>
       </li>
       <li>
