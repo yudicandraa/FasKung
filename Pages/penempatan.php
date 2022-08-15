@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" type="text/css"href="style.css">
+    <link rel="stylesheet" type="text/css"href="css/penempatan.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +18,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="Assets/Logo_PLN.png" alt="">
+                    <img src="../Assets/Logo_PLN.png" alt="">
                 </span>
 
                 <div class="text logo-text">
@@ -40,14 +40,14 @@
 
                 <ul class="menu-links"> 
                 <li class="nav-link">
-                        <a href="index.php">
+                        <a href="../index.php">
                         <i class='bx bxs-dashboard icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
 
                     <li class="menu-links">
-                      <a href="Pages/penempatan.php">
+                      <a href="penempatan.php">
                       <i class='bx bxs-archive-in icon' ></i>
                             <span class="text nav-text">Penempatan Barang</span>
                       </a>
@@ -71,7 +71,7 @@
                     </li>
 
                     <li class="menu-links">
-                      <a href="Pages/formulir.php">
+                      <a href="formulir.php">
                       <i class='bx bxs-file icon' ></i>
                             <span class="text nav-text">Formulir</span>
                       </a>
@@ -96,7 +96,7 @@
     </nav>
 
     <section class="home" id="home">
-        <h1 class="text"><b><span id="text0">Sistem Pendataan Inventaris</span></b><br>Fasiltas Pendukung</h1>
+        <h1 class="text"><b>Penempatan Barang</b><br>Fasiltas Pendukung</h1>
         <div class="date" onload="getDate()" class="form-control" id="date" 
                       name="date"><input type="date"></div>
 
@@ -128,12 +128,6 @@
   
 </section>
 
-<section class="penempatan" id="penempatan">
-        
-            
-        <div></div>
-  
-</section>
 <!--
     <section class="home">
         <div class="text"><b>Sistem Pendataan Inventaris</b><br class="br">Fasilitas Pendukung</div>

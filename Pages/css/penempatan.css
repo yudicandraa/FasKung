@@ -5,7 +5,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-    transition: all 0.8s ease;
 }
 
 :root{
@@ -510,4 +509,3 @@ h2{
   .today {
     background-color: var(--primary-color);
   }
-
