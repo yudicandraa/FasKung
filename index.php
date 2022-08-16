@@ -82,7 +82,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="Login/login.php">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Keluar</span>
                     </a>
