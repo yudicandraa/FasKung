@@ -55,7 +55,7 @@
                     </li>
 
                     <li class="menu-links">
-                      <a href="#">
+                      <a href="penarikan.php">
                       <i class='bx bxs-archive-out icon' ></i>
                             <span class="text nav-text">Penarikan Barang</span>
                       </a>
@@ -63,7 +63,7 @@
                     </li>
 
                     <li class="menu-links">
-                      <a href="#">
+                      <a href="pengeluaran.php">
                       <i class='bx bxs-archive icon' ></i>
                             <span class="text nav-text">Pengeluaran Sementara Barang</span>
                       </a>
