@@ -97,31 +97,86 @@
 
     <section class="home" id="home">
         <h1 class="text"><b>Penempatan Barang</b><br>Fasiltas Pendukung</h1>
-        <div class="date" onload="getDate()" class="form-control" id="date" 
-                      name="date"><input type="date"></div>
+        <div class="table">
+        <div class="buttons">
+            <div class="grid">
+                <div class="backBtn">
+                    <i class='bx bxs-bookmark-alt-plus'></i>
+                    <span class="btnText">Tambah Data</span>
+                </div>
 
-        <div class="grid">
-            <div class="middle1">
-            <i class='bx bxs-archive-in icon'></h4></i>
-            <h3>Penempatan Barang</h3>
-            <div class="left"><h4>Jumlah Barang</h4></div>
-            <h2>0</h2>
+                <div class="backBtn">
+                    <i class='bx bxs-file-pdf' ></i>
+                    <span class="btnText">Cetak PDF</span>
+                </div>
+
+                <div class="backBtn">
+                    <i class='bx bxs-spreadsheet'></i>
+                    <span class="btnText">Cetak Excel</span>
+                </div>
             </div>
-
-            <div class="middle2">
-            <i class='bx bxs-archive-out icon'></i>
-            <h3>Penarikan Barang</h3>
-            <div class="left"><h4>Jumlah Barang</h4></div>
-            <h2>0</h2>
-            </div>
-
-            <div class="middle3">
-            <i class='bx bxs-archive icon'></i>
-            <h3>Pengeluaran Sementara Barang</h3>
-            <div class="left"><h4>Jumlah Barang</h4></div>
-            <h2>0</h2>
-            </div>
-
+                        
+                        
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama Barang</th>
+                    <th>Merk/Type</th>
+                    <th>Nomor Seri</th>
+                    <th>Nomor Barang</th>
+                    <th>Satuan Jumlah</th>
+                    <th>Jumlah</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Meja</td>
+                    <td>Jepara</td>
+                    <td>01</td>
+                    <td>001</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>Baik</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Kursi</td>
+                    <td>Jepara</td>
+                    <td>02</td>
+                    <td>002</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>Baik</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>Papan Tulis</td>
+                    <td>Jepara</td>
+                    <td>01</td>
+                    <td>001</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>Baik</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>Lemari</td>
+                    <td>Jepara</td>
+                    <td>02</td>
+                    <td>002</td>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>Baik</td>
+                </tr>
+            </tbody>
+         
+        </table>
+       
 
             
         </div>
@@ -149,13 +204,6 @@
       modeSwitch = body.querySelector(".toggle-switch"),
       modeText = body.querySelector(".mode-text");
 
-var date = new Date();
-var year = date.getFullYear();
-var month = date.getMonth()+1;
-var todayDate = String(date.getDate()).padStart(2,'0');
-var pattern = year + '/' + month + '/' + todayDate;
-document.getElementById('date').value = pattern;
-document.write(pattern);
 
 
 toggle.addEventListener("click" , () =>{

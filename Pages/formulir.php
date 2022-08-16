@@ -104,7 +104,15 @@
                     <span class="title"><b>Detail Barang</b></span>
 
                     <div class="fields">
-                    
+                    <div class="input-field">
+                            <label>Jenis</label>
+                            <select required>
+                                <option disabled selected>Pilih Jenis Formulir</option>
+                                <option>Penempatan Barang</option>
+                                <option>Penarikan Barang</option>
+                                <option>Pengeluaran Sementara Barang</option>
+                            </select>
+                        </div>
                         <div class="input-field">
                             <label>Nama Barang</label>
                             <input type="text" placeholder="Masukkan Nama Barang" required>
@@ -142,15 +150,7 @@
                             <label>Tanggal</label>
                             <input type="date" placeholder="Masukkan Tanggal" required>
                         </div>
-                        <div class="input-field">
-                            <label>Jenis</label>
-                            <select required>
-                                <option disabled selected>Pilih Jenis Formulir</option>
-                                <option>Penempatan Barang</option>
-                                <option>Penarikan Barang</option>
-                                <option>Pengeluaran Sementara Barang</option>
-                            </select>
-                        </div>
+                       
                         
                     </div>
                     
@@ -159,6 +159,7 @@
                 
 
                     <div class="buttons">
+                        
                         <div class="backBtn">
                             <i class="uil uil-navigator"></i>
                             <span class="btnText">Kembali</span>
@@ -168,6 +169,7 @@
                             <span class="btnText">Simpan</span>
                             <i class="uil uil-navigator"></i>
                         </button>
+                        
                     </div>
                 </div> 
             </div>
