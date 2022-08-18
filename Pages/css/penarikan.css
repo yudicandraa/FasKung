@@ -305,6 +305,7 @@ body.dark .switch::before{
     font-weight: 600;
     color: var(--text-color);
     padding: 10px 30px;
+    
 }
 
 .home .date{
@@ -335,11 +336,12 @@ body.dark .home .text{
     color: var(--text-color);
 }
 .home .table{
+    
     padding: 10px 30px;
 }
 .home .content-table{
     border-collapse: collapse;
-    margin: 25px 0;
+    margin: 15px 0;
     padding: 10px 30px;
     border-radius: 10px;
     overflow: hidden;
@@ -371,46 +373,80 @@ body.dark .home .text{
     border-bottom: 2px solid var(--primary-color);
 }
 
-
-.container form button, .backBtn{
+.backBtn{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 45px;
-    max-width: 200px;
+    text-align: center;
+    height: 50px;
+    max-width: 150px;
     width: 100%;
     border: none;
     outline: none;
     color: #fff;
-    border-radius: 10px;
+    border-radius: 15px;
     margin: 10px 0px;
     background-color: var(--primary-color);
     transition: all 0.3s linear;
     cursor: pointer;
 }
-.container form .btnText{
-    font-size: 14px;
+.btnText{
+    font-size: 12px;
     font-weight: 400;
+    
 }
 .backBtn:hover{
-    color: var(--primary-color);
-    background-color: #D2D2FF;
-}
-form button:hover{
-    color: var(--primary-color);
-    background-color: #D2D2FF;
-}
-.container form button, .backBtn i{
-    font-size: 18px;
-    margin: 0px 10px 0px -10px;
-}
-.home .buttons .grid{
-    display: grid;
     
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0.1em;
+    background-color: #D2D2FF;
+    color: var(--primary-color);
+}
+button:hover{
+    color: var(--primary-color);
+    background-color: #D2D2FF;
+}
+.backBtn i{
+    align-items: center;
+    display: block;
+    font-size: 12px;
+    
+}
+.backBtn span{
+    padding: 0 10px;
+    font-size: 12px;
+   
 }
 
+.home .buttons .grid{
+    display: grid;
+    margin: 0px ;
+   
+    text-align: center;
+    gap: 5px;
+    grid-template-columns: repeat(8, 2fr);
+    padding: 0 30px;
+}
+
+.sidebar.close ~ .home .buttons .grid{
+    display: grid;
+   
+    
+    text-align: center;
+  
+    grid-template-columns: repeat(8, 2fr);
+    padding: 0 30px;
+}
+
+.backBtn button{
+    background-color: transparent;
+    color: #fff;
+    border-color: transparent;
+  
+}
+
+.backBtn button:hover{
+    color: var(--primary-color);
+    box-shadow: #3a3b3c;
+}
 
 h3{
     padding-left: 1em;
@@ -433,4 +469,11 @@ h2{
     font-size: 28px;
    
 }
-
+th{
+    font-size: 15px;
+    font-weight: 600;
+}
+td{
+    text-align: center;
+    font-size: 14px;
+}

@@ -70,13 +70,7 @@
 
                     </li>
 
-                    <li class="menu-links">
-                      <a href="formulir.php">
-                      <i class='bx bxs-file icon' ></i>
-                            <span class="text nav-text">Formulir</span>
-                      </a>
-
-                    </li>
+                    
                 </ul>
             </div>
 
@@ -96,28 +90,46 @@
     </nav>
 
     <section class="home" id="home">
-        <h1 class="text"><b>Penempatan Barang</b><br>Fasiltas Pendukung</h1>
-        <div class="table">
+        <h1 class="text"><b id="text1">Penempatan Barang</b><br>Fasiltas Pendukung</h1>
         <div class="buttons">
             <div class="grid">
+                <div class="buttons">
                 <div class="backBtn">
-                    <i class='bx bxs-bookmark-alt-plus'></i>
-                    <span class="btnText">Tambah Data</span>
+                        
+                        <button onclick="location.href='formulir.php'" type="button" id="button">
+                        <i class='bx bxs-bookmark-alt-plus' ></i>
+                        <span class="btnText">Tambah Data</span>
+                        </button>
+
+                        </div>
+                </div>
+                
+                <div class="buttons">
+                <div class="backBtn">
+                        
+                        <button onclick="location.href=''" type="button" id="button">
+                        <i class='bx bxs-file-pdf' ></i>
+                        <span class="btnText">Cetak PDF</span>
+                        </button>
+
+                        </div>
                 </div>
 
-                <div class="backBtn">
-                    <i class='bx bxs-file-pdf' ></i>
-                    <span class="btnText">Cetak PDF</span>
-                </div>
+                <div class="buttons">
+                    <div class="backBtn">
+                        
+                        <button onclick="location.href=''" type="button" id="button">
+                        <i class='bx bxs-spreadsheet'></i>
+                        <span class="btnText">Cetak Excel</span>
+                        </button>
 
-                <div class="backBtn">
-                    <i class='bx bxs-spreadsheet'></i>
-                    <span class="btnText">Cetak Excel</span>
+                    </div>
                 </div>
+                
+
             </div>
-                        
-                        
-        </div>
+        <div class="table">
+        
         
         <table class="content-table">
             <thead>
@@ -127,58 +139,48 @@
                     <th>Merk/Type</th>
                     <th>Nomor Seri</th>
                     <th>Nomor Barang</th>
-                    <th>Satuan Jumlah</th>
+                    <th>Satuan</th>
                     <th>Jumlah</th>
                     <th>Keterangan</th>
                 </tr>
             </thead>
             <tbody>
+            <?php 
+            
+            include"../koneksi.php";
+            $urutan = 1;
+            $ambildata = mysqli_query($koneksi, "SELECT * FROM penempatan");
+            while($tampil = mysqli_fetch_array($ambildata)){
+                echo "
+                
                 <tr>
-                    <td>1</td>
-                    <td>Meja</td>
-                    <td>Jepara</td>
-                    <td>01</td>
-                    <td>001</td>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>Baik</td>
+                    <td>$urutan</td>
+                    <td>$tampil[nama_barang]</td>
+                    <td>$tampil[merk_barang]</td>
+                    <td>$tampil[nomor_seri]</td>
+                    <td>$tampil[nomor_barang]</td>
+                    <td>$tampil[satuan_jumlah]</td>
+                    <td>$tampil[jumlah]</td>
+                    <td>$tampil[keterangan]</td>
                 </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Kursi</td>
-                    <td>Jepara</td>
-                    <td>02</td>
-                    <td>002</td>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>Baik</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Papan Tulis</td>
-                    <td>Jepara</td>
-                    <td>01</td>
-                    <td>001</td>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>Baik</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Lemari</td>
-                    <td>Jepara</td>
-                    <td>02</td>
-                    <td>002</td>
-                    <td>1</td>
-                    <td>10</td>
-                    <td>Baik</td>
-                </tr>
-            </tbody>
+                ";
+
+                $urutan++;
+            }
+            
+            
+            ?>
+        </tbody>
+            
          
         </table>
        
 
             
+        </div>
+        
+                        
+                        
         </div>
   
 </section>

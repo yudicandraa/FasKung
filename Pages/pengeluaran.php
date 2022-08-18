@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link rel="stylesheet" type="text/css"href="css/pengeluaran.css">
+    <link rel="stylesheet" type="text/css"href="css/penempatan.css">
     
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
@@ -70,13 +70,7 @@
 
                     </li>
 
-                    <li class="menu-links">
-                      <a href="formulir.php">
-                      <i class='bx bxs-file icon' ></i>
-                            <span class="text nav-text">Formulir</span>
-                      </a>
-
-                    </li>
+                    
                 </ul>
             </div>
 
@@ -96,28 +90,46 @@
     </nav>
 
     <section class="home" id="home">
-        <h1 class="text"><b>Pengeluaran Sementara Barang</b><br>Fasiltas Pendukung</h1>
-        <div class="table">
+        <h1 class="text"><b id="text1">Pengeluaran Sementara Barang</b><br>Fasiltas Pendukung</h1>
         <div class="buttons">
             <div class="grid">
+                <div class="buttons">
                 <div class="backBtn">
-                    <i class='bx bxs-bookmark-alt-plus'></i>
-                    <span class="btnText">Tambah Data</span>
+                        
+                        <button onclick="location.href='formulir.php'" type="button" id="button">
+                        <i class='bx bxs-bookmark-alt-plus' ></i>
+                        <span class="btnText">Tambah Data</span>
+                        </button>
+
+                        </div>
+                </div>
+                
+                <div class="buttons">
+                <div class="backBtn">
+                        
+                        <button onclick="location.href=''" type="button" id="button">
+                        <i class='bx bxs-file-pdf' ></i>
+                        <span class="btnText">Cetak PDF</span>
+                        </button>
+
+                        </div>
                 </div>
 
-                <div class="backBtn">
-                    <i class='bx bxs-file-pdf' ></i>
-                    <span class="btnText">Cetak PDF</span>
-                </div>
+                <div class="buttons">
+                    <div class="backBtn">
+                        
+                        <button onclick="location.href=''" type="button" id="button">
+                        <i class='bx bxs-spreadsheet'></i>
+                        <span class="btnText">Cetak Excel</span>
+                        </button>
 
-                <div class="backBtn">
-                    <i class='bx bxs-spreadsheet'></i>
-                    <span class="btnText">Cetak Excel</span>
+                    </div>
                 </div>
+                
+
             </div>
-                        
-                        
-        </div>
+        <div class="table">
+        
         
         <table class="content-table">
             <thead>
@@ -184,6 +196,10 @@
        
 
             
+        </div>
+        
+                        
+                        
         </div>
   
 </section>
