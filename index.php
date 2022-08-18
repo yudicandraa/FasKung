@@ -39,7 +39,7 @@
                 </li>
 
                 <ul class="menu-links"> 
-                <li class="nav-link">
+                    <li class="nav-link">
                         <a href="index.php">
                         <i class='bx bxs-dashboard icon' ></i>
                             <span class="text nav-text">Dashboard</span>
@@ -63,20 +63,15 @@
                     </li>
 
                     <li class="menu-links">
-                      <a href="pengeluaran.php">
+                      <a href="Pages/pengeluaran.php">
                       <i class='bx bxs-archive icon' ></i>
                             <span class="text nav-text">Pengeluaran Sementara Barang</span>
                       </a>
 
                     </li>
 
-                    <li class="menu-links">
-                      <a href="Pages/formulir.php">
-                      <i class='bx bxs-file icon' ></i>
-                            <span class="text nav-text">Formulir</span>
-                      </a>
-
-                    </li>
+                   
+                    
                 </ul>
             </div>
 
@@ -105,7 +100,19 @@
             <i class='bx bxs-archive-in icon'></h4></i>
             <h3>Penempatan Barang</h3>
             <div class="left"><h4>Jumlah Barang</h4></div>
-            <h2>0</h2>
+
+            <?php 
+            
+            include"koneksi.php";
+ 
+            $ambildata = mysqli_query($koneksi, "SELECT COUNT(*) FROM penempatan");
+            $row = mysqli_fetch_array($ambildata);    
+                echo "
+                <h2>$row[0]</h2>
+                "
+            
+            ?>
+            
             </div>
 
             <div class="middle2">

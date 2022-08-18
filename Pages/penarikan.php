@@ -70,13 +70,7 @@
 
                     </li>
 
-                    <li class="menu-links">
-                      <a href="formulir.php">
-                      <i class='bx bxs-file icon' ></i>
-                            <span class="text nav-text">Formulir</span>
-                      </a>
-
-                    </li>
+                    
                 </ul>
             </div>
 
@@ -96,28 +90,46 @@
     </nav>
 
     <section class="home" id="home">
-        <h1 class="text"><b>Penarikan Barang</b><br>Fasiltas Pendukung</h1>
-        <div class="table">
+        <h1 class="text"><b id="text1">Penarikan Barang</b><br>Fasiltas Pendukung</h1>
         <div class="buttons">
             <div class="grid">
+                <div class="buttons">
                 <div class="backBtn">
-                    <i class='bx bxs-bookmark-alt-plus'></i>
-                    <span class="btnText">Tambah Data</span>
+                        
+                        <button onclick="location.href='formulir.php'" type="button" id="button">
+                        <i class='bx bxs-bookmark-alt-plus' ></i>
+                        <span class="btnText">Tambah Data</span>
+                        </button>
+
+                        </div>
+                </div>
+                
+                <div class="buttons">
+                <div class="backBtn">
+                        
+                        <button onclick="location.href=''" type="button" id="button">
+                        <i class='bx bxs-file-pdf' ></i>
+                        <span class="btnText">Cetak PDF</span>
+                        </button>
+
+                        </div>
                 </div>
 
-                <div class="backBtn">
-                    <i class='bx bxs-file-pdf' ></i>
-                    <span class="btnText">Cetak PDF</span>
-                </div>
+                <div class="buttons">
+                    <div class="backBtn">
+                        
+                        <button onclick="location.href=''" type="button" id="button">
+                        <i class='bx bxs-spreadsheet'></i>
+                        <span class="btnText">Cetak Excel</span>
+                        </button>
 
-                <div class="backBtn">
-                    <i class='bx bxs-spreadsheet'></i>
-                    <span class="btnText">Cetak Excel</span>
+                    </div>
                 </div>
+                
+
             </div>
-                        
-                        
-        </div>
+        <div class="table">
+        
         
         <table class="content-table">
             <thead>
@@ -179,6 +191,10 @@
        
 
             
+        </div>
+        
+                        
+                        
         </div>
   
 </section>
