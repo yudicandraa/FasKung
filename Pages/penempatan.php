@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+?>
 
 <html lang="en">
 <head>
@@ -18,12 +23,12 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="../Assets/Logo_PLN.png" alt="">
+                    <img src="../img/asdp.png" alt="">
                 </span>
 
                 <div class="text logo-text">
-                    <span class="name">PLN UNIT INDUK WILAYAH</span>
-                    <span class="profession">ACEH</span>
+                    <span class="name">PT. ASDP Indonesia Ferry Persero</span>
+                    <span class="profession">Indonesia</span>
                 </div>
             </div>
 
@@ -33,14 +38,11 @@
         <div class="menu-bar">
             <div class="menu">
 
-                <li class="search-box">
-                    <i class='bx bx-search icon'></i>
-                    <input type="text" placeholder="Cari">
-                </li>
+
 
                 <ul class="menu-links"> 
                 <li class="nav-link">
-                        <a href="../index.php">
+                        <a href="../home.php">
                         <i class='bx bxs-dashboard icon' ></i>
                             <span class="text nav-text">Dashboard</span>
                         </a>
@@ -76,7 +78,7 @@
 
             <div class="bottom-content">
                 <li class="">
-                    <a href="#">
+                    <a href="../index.php">
                         <i class='bx bx-log-out icon' ></i>
                         <span class="text nav-text">Keluar</span>
                     </a>
@@ -93,10 +95,10 @@
         <h1 class="text"><b id="text1">Penempatan Barang</b><br>Fasiltas Pendukung</h1>
         <div class="buttons">
             <div class="grid">
-                <div class="buttons">
+                <div class="buttons" onclick="location.href='formulir.php'">
                 <div class="backBtn">
                         
-                        <button onclick="location.href='formulir.php'" type="button" id="button">
+                        <button  type="button" id="button">
                         <i class='bx bxs-bookmark-alt-plus' ></i>
                         <span class="btnText">Tambah Data</span>
                         </button>
@@ -104,10 +106,10 @@
                         </div>
                 </div>
                 
-                <div class="buttons">
+                <div class="buttons" onclick="location.href='../cetakpenempatan.php'">
                 <div class="backBtn">
                         
-                        <button onclick="location.href=''" type="button" id="button">
+                        <button  type="button" id="button">
                         <i class='bx bxs-file-pdf' ></i>
                         <span class="btnText">Cetak PDF</span>
                         </button>
@@ -115,10 +117,10 @@
                         </div>
                 </div>
 
-                <div class="buttons">
+                <div class="buttons" onclick="location.href='../cetakexcel1.php'">
                     <div class="backBtn">
                         
-                        <button onclick="location.href=''" type="button" id="button">
+                        <button  type="button" id="button">
                         <i class='bx bxs-spreadsheet'></i>
                         <span class="btnText">Cetak Excel</span>
                         </button>
@@ -131,7 +133,7 @@
         <div class="table">
         
         
-        <table class="content-table">
+        <table class="content-table" style="width:100%">
             <thead>
                 <tr>
                     <th>No</th>
@@ -142,57 +144,103 @@
                     <th>Satuan</th>
                     <th>Jumlah</th>
                     <th>Keterangan</th>
+                    <th>Aksi</th>
                 </tr>
             </thead>
             <tbody>
             <?php 
             
             include"../koneksi.php";
-            $urutan = 1;
-            $ambildata = mysqli_query($koneksi, "SELECT * FROM penempatan");
-            while($tampil = mysqli_fetch_array($ambildata)){
-                echo "
-                
-                <tr>
-                    <td>$urutan</td>
-                    <td>$tampil[nama_barang]</td>
-                    <td>$tampil[merk_barang]</td>
-                    <td>$tampil[nomor_seri]</td>
-                    <td>$tampil[nomor_barang]</td>
-                    <td>$tampil[satuan_jumlah]</td>
-                    <td>$tampil[jumlah]</td>
-                    <td>$tampil[keterangan]</td>
-                </tr>
-                ";
+            //pagination
+            $jumlahdataperhalaman = 5;
+            $result = mysqli_query($koneksi, "SELECT * FROM penempatan");
+            $jumlahdata = mysqli_num_rows($result);
+            $jumlahhalaman = ceil($jumlahdata / $jumlahdataperhalaman);
 
-                $urutan++;
+            if(isset($_GET['page'])){
+                $halamanAktif = $_GET['page'];
             }
-            
-            
+            else{
+                $halamanAktif = 1;
+            }
+           
+
+            $awalData = ( $jumlahdataperhalaman * $halamanAktif) - $jumlahdataperhalaman;
+            //var_dump($jumlahdata);
+            $urutan = $awalData + 1;
+            $ambildata = mysqli_query($koneksi, "SELECT * FROM penempatan LIMIT $awalData,$jumlahdataperhalaman");
+            while($tampil = mysqli_fetch_array($ambildata)){
+                
+                $nama_barang = $tampil['nama_barang'];
+                $merk_barang = $tampil['merk_barang'];
+                $nomor_seri = $tampil['nomor_seri'];
+                $nomor_barang = $tampil['nomor_barang'];
+                $satuan = $tampil['satuan_jumlah'];
+                $jumlah = $tampil['jumlah'];
+                $keterangan = $tampil['keterangan'];
+                ?>    
+                <tr>
+                <td><?php echo $urutan++ ?></td>
+                <td style="width:15%"><?php echo $nama_barang ?></td>
+                <td style="width:15%"><?php echo $merk_barang ?></td>
+                <td style="width:10%"><?php echo $nomor_seri ?></td>
+                <td style="width:12%"><?php echo $nomor_barang ?></td>
+                <td style="width:5%"><?php echo $satuan ?></td>
+                <td style="width:5%"><?php echo $jumlah?></td>
+                <td style="width:10%"><?php echo $keterangan?></td>
+                <td id="aksi" style="width:25%"> 
+
+                <a href="update.php?kode=<?php echo $nomor_barang?>">
+
+                <button  class="btnaksi2" type="submit">
+                Edit
+                </button>
+                </a>
+                
+                <a href="tarikbarang.php?kode=<?php echo $nomor_barang?>">
+                <button  class="btnaksi3" type="submit" >
+                Penarikan
+                </button>
+                </a>   
+                <a href="keluar_sementara.php?kode=<?php echo $nomor_barang?>">
+                <button  class="btnaksi4" type="submit">
+                Pengeluaran
+                </button>
+                </a> 
+                   
+                        
+
+                </td>
+            </tr>
+
+            <?php 
+            }
             ?>
+            
+           
+
+            
         </tbody>
             
          
         </table>
-       
 
-            
         </div>
         
-                        
+             
                         
         </div>
-  
+            <div class="pagination">
+            <?php for($i = 1; $i <= $jumlahhalaman; $i++) : ?>
+            <?php if ($i == $halamanAktif) : ?>
+                <a class="navigasi" href="?page=<?= $i; ?>"><?= $i; ?></a>
+            <?php else : ?>   
+                <a class="navigasi2" href="?page=<?= $i; ?>"><?= $i; ?></a>
+            <?php endif; ?>               
+         <?php endfor; ?>  
+            </div>
 </section>
 
-<!--
-    <section class="home">
-        <div class="text"><b>Sistem Pendataan Inventaris</b><br class="br">Fasilitas Pendukung</div>
-        
-       
-        <h1 id="dashboard">Dashboard</h1>
-    </section>
--->
 
 
    
@@ -233,3 +281,10 @@ modeSwitch.addEventListener("click" , () =>{
 
     </script>
 </html>
+
+<?php
+}else{
+     header("Location: index.php");
+     exit();
+}
+?>

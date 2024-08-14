@@ -477,3 +477,7 @@ td{
     text-align: center;
     font-size: 14px;
 }
+.home .navigasi:hover{
+    box-shadow: 2px 2px #888888;
+    background-color: #D2D2FF;
+}

@@ -75,6 +75,7 @@ body.dark{
     border-radius: 6px;
 }
 
+
 .sidebar .icon{
     min-width: 60px;
     border-radius: 6px;
@@ -290,7 +291,12 @@ body.dark .switch::before{
     left: 20px;
 }
 
+section {
+    background: url("/Assets/bg.png") fixed no-repeat;
+
+}
 .home{
+   
     position: absolute;
     top: 0;
     top: 0;
@@ -298,15 +304,53 @@ body.dark .switch::before{
     height: 100vh;
     width: calc(100% - 350px);
     background-color: var(--body-color);
+    background-image: url("Assets/bg.png");
+
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-attachment:local;
+    background-size: cover;
+    background-size: 1200px;
+   
     transition: var(--tran-05);
+}
+
+.home .sidebar.close{
+    background-position: bottom;
 }
 .home .text{
     margin-top: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-color);
+    padding: 10px 30px;
+  
+}
+
+.home .text1{
+    
+    border-radius: 30px;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-color);
+    padding: 10px 30px;
+   
+  
+}
+.home .text2{
+    
+    border-radius: 20px;
+    margin-top: 10px;
     font-size: 18px;
     font-weight: 600;
     color: var(--text-color);
     padding: 10px 30px;
+    text-transform: capitalize;
+   
 }
+
+
 
 .home .date{
     display: inline-block;
@@ -338,7 +382,7 @@ body.dark .home .text{
 
 .home .grid{
     display: grid;
-    margin-top: 30px;
+    margin-top: 50px;
     padding: 10px 30px;
     grid-template-columns: repeat(4, 1fr);
     gap: 0.8em;
@@ -375,7 +419,7 @@ body.dark .home .text{
 
 
 .home .grid > div:hover{
-    box-shadow: 5px 5px #D2D2FF;
+    box-shadow: 3px 3px #0F123F;
 }
 
 .home .grid > div i{

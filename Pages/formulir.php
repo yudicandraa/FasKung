@@ -1,4 +1,9 @@
-<!DOCTYPE html>
+<?php 
+session_start();
+
+if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
+
+?>
 
 <html lang="en">
 <head>
@@ -11,13 +16,14 @@
     <!----===== Boxicons CSS ===== -->
     <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
     
-    <!--<title>Dashboard Sidebar Menu</title>--> 
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
 
 
     <section class="home" id="home">
     <h1 class="text"><b>Formulir Penempatan Barang</b><br>Fasiltas Pendukung</h1>
+
     <div class="container">
     <form action="#" method="post">
             <div class="form first">
@@ -30,38 +36,38 @@
 
                         <div class="input-field">
                             <label>Nama Barang</label>
-                            <input type="text" name="nama_barang" placeholder="Masukkan Nama Barang" required>
+                            <input type="text" name="nama_barang" placeholder="Masukkan Nama Barang" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
                             <label>Merk/Type</label>
-                            <input type="text" name="merk_barang" placeholder="Masukkan Merk/Type" required>
+                            <input type="text" name="merk_barang" placeholder="Masukkan Merk/Type" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
                             <label>Nomor Seri</label>
-                            <input type="text" name="nomor_seri" placeholder="Masukkan Nomor Seri" required>
+                            <input type="text" name="nomor_seri" placeholder="Masukkan Nomor Seri" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
                             <label>Nomor Barang</label>
-                            <input type="text" name="nomor_barang" placeholder="Masukkan Nomor Barang" required>
+                            <input type="text" name="nomor_barang" placeholder="Masukkan Nomor Barang" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
                             <label>Satuan</label>
-                            <input type="number" name="satuan_jumlah" placeholder="Masukkan Satuan Jumlah" required>
+                            <input type="number" name="satuan_jumlah" placeholder="Masukkan Satuan Jumlah" autocomplete="off" required>
                         </div>
 
                         <div class="input-field">
                             <label>Jumlah</label>
-                            <input type="number" name="jumlah" placeholder="Masukkan Jumlah" required>
+                            <input type="number" name="jumlah" placeholder="Masukkan Jumlah" autocomplete="off" required>
                         </div>
                         
                         
                         <div class="input-field">
                             <label>Keterangan</label>
-                            <input type="text" name="keterangan" placeholder="Masukkan Keterangan" required>
+                            <input type="text" name="keterangan" placeholder="Masukkan Keterangan" autocomplete="off">
                         </div>
                         
                       
@@ -153,9 +159,11 @@ modeSwitch.addEventListener("click" , () =>{
 </html>
 
 <?php 
-include"../koneksi.php";
+include"../koneksi.php";    
 
 if(isset($_POST['proses'])){
+
+    
     mysqli_query($koneksi, "INSERT INTO penempatan set
     nama_barang = '$_POST[nama_barang]',
     merk_barang = '$_POST[merk_barang]',
@@ -163,11 +171,33 @@ if(isset($_POST['proses'])){
     nomor_seri = '$_POST[nomor_seri]',
     satuan_jumlah = '$_POST[satuan_jumlah]',
     jumlah = '$_POST[jumlah]',
-    keterangan = '$_POST[keterangan]'");
+    keterangan = '$_POST[keterangan]'
 
-    echo "<script>window.alert('Data Disimpan')
-    window.location='penempatan.php'</script>";
+    ON DUPLICATE KEY UPDATE nomor_barang = '$_POST[nomor_barang]'");
+
+echo "<script>swal({
+    title: 'Berhasil',
+    text: 'Barang Disimpan!',
+    icon: 'success',
+    button: false,
+    timer: 2000,
+}).then(function() {
+    window.location='penempatan.php';
+});
+</script>"; 
+
+	
+
+
+
+
+
    
 }
 
+
+}else{
+     header("Location: index.php");
+     exit();
+}
 ?>

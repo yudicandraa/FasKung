@@ -301,11 +301,16 @@ body.dark .switch::before{
 }
 .home .text{
     margin-top: 50px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
     color: var(--text-color);
     padding: 10px 30px;
     
+}
+.btnaksi4:hover{
+    background-color: #fff;
+    color: #e7a305;
+    box-shadow: 2px 2px #888888;
 }
 
 .home .date{
@@ -338,6 +343,7 @@ body.dark .home .text{
 .home .table{
     
     padding: 10px 30px;
+    max-width: 100% ;
 }
 .home .content-table{
     border-collapse: collapse;
@@ -352,7 +358,7 @@ body.dark .home .text{
     background-color: var(--primary-color);
     color: #fff;
     text-align: left;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
 
 }
@@ -373,6 +379,18 @@ body.dark .home .text{
     border-bottom: 2px solid var(--primary-color);
 }
 
+.home .content-table tbody tr td a{
+    
+    color: transparent;
+    padding: 1px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.tombolaksi {
+    width: 200px;
+}
 .backBtn{
     display: flex;
     align-items: center;
@@ -400,9 +418,15 @@ body.dark .home .text{
     background-color: #D2D2FF;
     color: var(--primary-color);
 }
-button:hover{
-    color: var(--primary-color);
-    background-color: #D2D2FF;
+.btnaksi2:hover{
+    background-color: #fff;
+    color: #319DA0;
+    box-shadow: 2px 2px #888888;
+}
+.btnaksi3:hover{
+    background-color: #fff;
+    color: #D61C4E;
+    box-shadow: 2px 2px #888888;
 }
 .backBtn i{
     align-items: center;
@@ -470,10 +494,134 @@ h2{
    
 }
 th{
-    font-size: 15px;
-    font-weight: 600;
+    font-size: 12px;
+    font-weight: 800;
 }
 td{
-    text-align: center;
+    text-align: left;
     font-size: 14px;
+}
+
+.btnaksi{
+    font-size: 12px;
+    align-items: left;
+    justify-content: center;
+    text-align: center;
+    height: 35px;
+    max-width: 75px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: #319DA0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.btnaksi2{
+    font-size: 12px;
+    align-items: left;
+    justify-content: left;
+    text-align: center;
+    height: 30px;
+    max-width: 40px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: #319DA0;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+
+.btnaksi3{
+    font-size: 12px;
+    align-items: left;
+    justify-content: left;
+    text-align: center;
+    height: 30px;
+    max-width: 70px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: #D61C4E;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+.btnaksi4{
+    font-size: 12px;
+    align-items: left;
+    justify-content: left;
+    text-align: center;
+    height: 30px;
+    max-width: 85px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    margin: 10px 0px;
+    background-color: #e7a305;
+    transition: all 0.3s linear;
+    cursor: pointer;
+}
+#aksi {
+    align-items: left;
+}
+
+.home .pagination{
+    text-align: center;
+
+}
+.home .navigasi{
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    max-width: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 10px 0px 10px 0px;
+    background-color: var(--primary-color);
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+}
+.home .navigasi2{
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 12px;
+    text-align: center;
+    align-items: center;
+    height: 50px;
+    max-width: 50px;
+    width: 100%;
+    border: none;
+    outline: none;
+    color: var(--primary-color);
+    border-radius: 10px;
+    font-weight: 600;
+    margin: 10px 0px 10px 0px;
+    background-color: transparent;
+    transition: all 0.3s linear;
+    cursor: pointer;
+
+}
+
+.home .navigasi:hover{
+    box-shadow: 2px 2px #888888;
+    background-color: #D2D2FF;
 }
